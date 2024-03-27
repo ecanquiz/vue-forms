@@ -1,6 +1,6 @@
 {
   "name": "@ecanquiz/vue-forms",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Components for forms created from primitive elements",
   "main": "./dist/vue-forms.umd.js",
   "module": "./dist/vue-forms.mjs",
