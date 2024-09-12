@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <p    
-    class="form-error"
+    class="error-message"
     :id="id"
     aria-live="assertive"
   >

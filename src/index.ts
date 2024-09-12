@@ -1,56 +1,45 @@
 import { defineAsyncComponent } from 'vue'
 
-const AppBtn = defineAsyncComponent(() => import('./components/AppBtn.vue'))
-const AppCheckbox = defineAsyncComponent(() => import('./components/AppCheckbox.vue'))
-const AppErrorMessage = defineAsyncComponent(() => import('./components/AppErrorMessage.vue'))
-const AppFlashMessage = defineAsyncComponent(() => import('./components/AppFlashMessage.vue'))
-const AppInConstruction = defineAsyncComponent(() => import('./components/AppInConstruction.vue'))
-const AppInput = defineAsyncComponent(() => import('./components/AppInput.vue'))
-const AppLabelSpan = defineAsyncComponent(() => import('./components/AppLabelSpan.vue'))
-const AppLink = defineAsyncComponent(() => import('./components/AppLink.vue'))
-const AppLoadingButton = defineAsyncComponent(() => import('./components/AppLoadingButton.vue'))
-const AppPageHeader = defineAsyncComponent(() => import('./components/AppPageHeader.vue'))
-const AppPaginationA = defineAsyncComponent(() => import('./components/AppPaginationA.vue'))
-const AppPaginationB = defineAsyncComponent(() => import('./components/AppPaginationB.vue'))
-const AppPaginationC = defineAsyncComponent(() => import('./components/AppPaginationC.vue'))
-const AppPending = defineAsyncComponent(() => import('./components/AppPending.vue'))
-const AppRadio = defineAsyncComponent(() => import('./components/AppRadio.vue'))
-const AppRadioGroup = defineAsyncComponent(() => import('./components/AppRadioGroup.vue'))
-const AppSectionBorder = defineAsyncComponent(() => import('./components/AppSectionBorder.vue'))
-const AppSectionInfo = defineAsyncComponent(() => import('./components/AppSectionInfo.vue'))
-const AppSelect = defineAsyncComponent(() => import('./components/AppSelect.vue'))
-const AppTextarea = defineAsyncComponent(() => import('./components/AppTextarea.vue'))
+const Btn = defineAsyncComponent(() => import('./components/Btn.vue'))
+const Checkbox = defineAsyncComponent(() => import('./components/Checkbox.vue'))
+const ErrorMessage = defineAsyncComponent(() => import('./components/ErrorMessage.vue'))
+const FlashMessage = defineAsyncComponent(() => import('./components/FlashMessage.vue'))
+const InConstruction = defineAsyncComponent(() => import('./components/InConstruction.vue'))
+const Input = defineAsyncComponent(() => import('./components/Input.vue'))
+const LabelSpan = defineAsyncComponent(() => import('./components/LabelSpan.vue'))
+const Link = defineAsyncComponent(() => import('./components/Link.vue'))
+const LoadingButton = defineAsyncComponent(() => import('./components/LoadingButton.vue'))
+const PageHeader = defineAsyncComponent(() => import('./components/PageHeader.vue'))
+const PaginationA = defineAsyncComponent(() => import('./components/PaginationA.vue'))
+const PaginationB = defineAsyncComponent(() => import('./components/PaginationB.vue'))
+const PaginationC = defineAsyncComponent(() => import('./components/PaginationC.vue'))
+const Pending = defineAsyncComponent(() => import('./components/Pending.vue'))
+const Radio = defineAsyncComponent(() => import('./components/Radio.vue'))
+const RadioGroup = defineAsyncComponent(() => import('./components/RadioGroup.vue'))
+const SectionBorder = defineAsyncComponent(() => import('./components/SectionBorder.vue'))
+const SectionInfo = defineAsyncComponent(() => import('./components/SectionInfo.vue'))
+const Select = defineAsyncComponent(() => import('./components/Select.vue'))
+const Textarea = defineAsyncComponent(() => import('./components/Textarea.vue'))
 
 export {
-  AppBtn,
-  AppCheckbox,
-  AppErrorMessage,
-  AppFlashMessage,
-  AppInConstruction,
-  AppInput,
-  AppLabelSpan,
-  AppLink,
-  AppLoadingButton,
-  AppPageHeader,
-  AppPaginationA,
-  AppPaginationB,
-  AppPaginationC,
-  AppPending,
-  AppRadio,
-  AppRadioGroup,
-  AppSectionBorder,
-  AppSectionInfo,  
-  AppSelect,
-  AppTextarea
+  Btn,
+  Checkbox,
+  ErrorMessage,
+  FlashMessage,
+  InConstruction,
+  Input,
+  LabelSpan,
+  Link,
+  LoadingButton,
+  PageHeader,
+  PaginationA,
+  PaginationB,
+  PaginationC,
+  Pending,
+  Radio,
+  RadioGroup,
+  SectionBorder,
+  SectionInfo,  
+  Select,
+  Textarea
 };
-
-  
-
-  
-  
-  
-
-
-
-
-
