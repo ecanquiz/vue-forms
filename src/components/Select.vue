@@ -1,36 +1,29 @@
 <script setup lang="ts">
-import useUniqueId from '../composables/useUniqueId'
+import { useId } from 'vue'
 import type { Option } from '../types/Option'
 
 withDefaults(defineProps<{
-  label?: string 
-  modelValue?: string | number
+  label?: string  
   options: Option[]
   error?: string
 }>(), {
   label: '',
-  modelValue: '',
   error: ''
 })
 
-const uuid = useUniqueId().getID()
+const selectValue = defineModel()
+const id = useId()
 </script>
 
 <template>
 <!--div class="block"-->
   <label v-if="label">{{ label }}</label>
-  <select    
+  <select
+    :id="id"  
     class="field"
-    :value="modelValue"
-    v-bind="{
-      ...$attrs,
-      onChange: ($event) => { $emit(
-        'update:modelValue',
-        ($event.target as HTMLSelectElement).value
-      ) }
-    }"
-    :id="uuid"
-    :aria-describedby="error ? `${uuid}-error` : undefined"
+    v-model="selectValue" 
+    v-bind="$attrs"    
+    :aria-describedby="error ? `${id}-error` : undefined"
     :aria-invalid="error ? true : undefined"
   >
     <option value="" class="text-gray-200">Seleccione...</option>
@@ -38,12 +31,12 @@ const uuid = useUniqueId().getID()
       v-for="option in options"
       :value="option.id"
       :key="option.id"
-      :selected="option.id === modelValue"
+      :selected="option.id === selectValue"
     >{{ option.name }}</option>
   </select>
   <AppErrorMessage
     v-if="error"
-    :id="`${uuid}-error`"
+    :id="`${id}-error`"
   >
     {{ error }}
   </AppErrorMessage>

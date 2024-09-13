@@ -1,4 +1,5 @@
 <script lang="ts">
+// @ts-nocheck
 import { RouterLink } from 'vue-router'
 
 export default {

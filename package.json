@@ -31,18 +31,18 @@
   "author": "Ernesto Canquiz",
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^3.4.21"
+    "vue": "^3.4.29"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",
-    "@vitejs/plugin-vue": "^5.0.4",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.7.3",
-    "vue": "^3.4.21",
-    "vue-tsc": "^2.0.6"
+    "@vitejs/plugin-vue": "^5.0.5",
+    "typescript": "~5.4.0",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^4.2.1",
+    "vue": "^3.4.29",
+    "vue-tsc": "^2.0.21"
   },
   "dependencies": {
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.4.5"
   }
 }

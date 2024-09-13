@@ -1,41 +1,37 @@
 <script setup lang="ts">
-import useUniqueId from '../composables/useUniqueId'
+  import { useId } from 'vue'
+  
+  withDefaults(defineProps<{
+    label?: string,
+    error?: string
+  }>(), {
+    label: '',
+    error: ''
+  })
 
-withDefaults(defineProps<{
-  label?: string
-  modelValue?: string | number
-  error?: string
-}>(), {
-  label: '',
-  modelValue: '',
-  error: ''
-})
-
-const uuid = useUniqueId().getID()
+  const inputValue = defineModel()
+  const id = useId()
 </script>
 
-<template>
-<!--div class="block"-->
-  <label :for="uuid" v-if="label">{{ label }}</label>
+<template> 
+  <label :for="id" v-if="label">{{ label }}</label>
   <input
+    :id="id"  
     v-bind="$attrs"
-    :value="modelValue"
     :placeholder="label"
-    @input="$emit(
-      'update:modelValue',
-      ($event.target as HTMLInputElement).value
-    )"
+    v-model="inputValue"   
     class="field"
-    :id="uuid"
-    :aria-describedby="error ? `${uuid}-error` : undefined"
+    :aria-describedby="error ? `${id}-error` : undefined"
     :aria-invalid="error ? true : undefined"
   >
   <AppErrorMessage
     v-if="error"
-    :id="`${uuid}-error`"
+    :id="`${id}-error`"
   >
     {{ error }}
   </AppErrorMessage>
-<!--/div-->
 </template>
+
+<!--style scoped></style-->
+
 

@@ -1,20 +1,31 @@
 <script setup lang="ts">
+import { useId } from 'vue'
+
 withDefaults(defineProps<{
-  label?: string
-  modelValue?: boolean 
+  label?: string,
+  error?: string
 }>(), {
   label: '',
-  modelValue: false
+  error: ''
 })
+
+const checkboxValue = defineModel()
+const id = useId()
 </script>
 
 <template>
   <input
+    :id="id" 
     v-bind="$attrs"
     type="checkbox"
-    :checked="modelValue"
-    @change="$emit('update:modelValue', ($event.target as HTMLInputElement).checked)"
+    v-model="checkboxValue"
     class="mr-1"
   />
   <label v-if="label">{{ label }}</label>
+  <AppErrorMessage
+    v-if="error"
+    :id="`${id}-error`"
+  >
+    {{ error }}
+  </AppErrorMessage>
 </template>
