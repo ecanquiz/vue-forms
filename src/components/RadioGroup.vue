@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import useUniqueId from '../composables/useUniqueId'
+import { useId } from 'vue'
 
 withDefaults(defineProps<{
   options: { label: string; value: number; }[] 
   name: string
-  modelValue: string | number
   vertical?: boolean
   error?: string
 }>(), {
@@ -12,7 +11,8 @@ withDefaults(defineProps<{
   error: ''
 })
 
-const uuid = useUniqueId().getID()
+const modelValue = defineModel()
+const id = useId()
 </script>
 
 <template>
@@ -27,14 +27,13 @@ const uuid = useUniqueId().getID()
     <AppRadio
       :label="option.label"
       :value="option.value"
-      :modelValue="modelValue"
+      v-model="modelValue"
       :name="name"
-      @update:modelValue="$emit('update:modelValue', $event)"
     />
   </component>
   <AppErrorMessage
     v-if="error"
-    :id="`${uuid}-error`"
+    :id="`${id}-error`"
   >
     {{ error }}
   </AppErrorMessage>

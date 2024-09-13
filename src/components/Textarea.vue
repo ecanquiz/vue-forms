@@ -1,34 +1,32 @@
 <script setup lang="ts">
-import useUniqueId from '../composables/useUniqueId'
+import { useId } from 'vue'
 
 withDefaults(defineProps<{
   label?: string
-  modelValue?: string | number
   error?: string
 }>(), {
   label: '',
-  modelValue: '',
   error: ''
 })
 
-const uuid = useUniqueId().getID()
+const textareaValue = defineModel()
+const id = useId()
 </script>
 
 <template>
   <label v-if="label">{{ label }}</label>
   <textarea    
     v-bind="$attrs"
-    :value="modelValue"
-    :placeholder="label"
-    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"    
+    v-model="textareaValue as HTMLInputElement['value']" 
+    :placeholder="label"    
     class="field"
-    :id="uuid"
-    :aria-describedby="error ? `${uuid}-error` : undefined"
+    :id="id"
+    :aria-describedby="error ? `${id}-error` : undefined"
     :aria-invalid="error ? true : undefined"
   ></textarea>
   <AppErrorMessage
     v-if="error"
-    :id="`${uuid}-error`"
+    :id="`${id}-error`"
   >
     {{ error }}
   </AppErrorMessage>
